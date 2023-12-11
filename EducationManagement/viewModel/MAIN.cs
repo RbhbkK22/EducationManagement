@@ -1,4 +1,5 @@
 ﻿using EducationManagement.extensions;
+using EducationManagement.viewModel.AddForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,14 +35,32 @@ namespace EducationManagement
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            dataBase.loadDB(dataGridView1, comboBox1.SelectedIndex);
-        }
-
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             dataBase.loadDB(dataGridView1, tabControl1.SelectedIndex);
+        }
+
+        private void OpenAddForm_Click(object sender, EventArgs e)
+        {
+            switch (tabControl1.SelectedIndex)
+            {
+                case 0:
+                    AddStudent addStudent = new AddStudent(dataGridView1, tabControl1.SelectedIndex);
+                    addStudent.Show();
+                    break;
+                case 1:
+                    AddGrup addGrup = new AddGrup(dataGridView1, tabControl1.SelectedIndex);
+                    addGrup.Show();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+            }
         }
 
 

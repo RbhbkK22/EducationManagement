@@ -31,5 +31,29 @@ namespace EducationManagement.extensions
             };
         }
 
+        public static void AddPlaceholderComboBox(this ComboBox cb, string placeholder)
+        {
+
+            cb.ForeColor = Color.Gray; 
+            cb.Items.Add(placeholder);
+            cb.Enter += (s, e) =>
+            {
+                if (cb.Text == placeholder)
+                {
+                    cb.ForeColor = Color.Black;
+                    cb.Items.Remove(placeholder);
+                }
+            };
+
+            cb.Leave += (s, e) =>
+            {
+                if (cb.Text == "")
+                {
+                    cb.ForeColor = Color.Gray;
+                    cb.Text = placeholder;
+                }
+            };
+        }
+
     }
 }
