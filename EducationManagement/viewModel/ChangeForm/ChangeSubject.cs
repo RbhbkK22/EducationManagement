@@ -12,46 +12,41 @@ using System.Windows.Forms;
 
 namespace EducationManagement.viewModel.ChangeForm
 {
-    public partial class ChangeStudent : Form
+    public partial class ChangeSubject : Form
     {
-        Tools tool = new Tools();
         DataBase dataBase = new DataBase();
-        DataGridView dataGridView;
         MySqlCommand command;
+        DataGridView dataGridView;
+        Tools tools = new Tools();
         int idTab;
         string prava;
         int idRecor;
-        public ChangeStudent(DataGridView dataGridView, int idTab, string prava, int idRecor)
+
+        public ChangeSubject(DataGridView dataGridView, int idTab, string prava, int idRecor)
         {
             InitializeComponent();
             dataBase.Connect();
+            tools.FillingComboBox(TecherBox, "staff", 0);
             this.dataGridView = dataGridView;
             this.idTab = idTab;
             this.prava = prava;
             this.idRecor = idRecor;
-            tool.FillingComboBox(grupBox, "grup", 1);
             Print();
         }
 
         private void Print()
         {
-            grupBox.Text = dataGridView.CurrentRow.Cells[1].Value.ToString();
-            nameTextBox.Text = dataGridView.CurrentRow.Cells[2].Value.ToString();
-            lastNameTextBox.Text = dataGridView.CurrentRow.Cells[3].Value.ToString();
-            string[] street = dataGridView.CurrentRow.Cells[4].Value.ToString().Split(' ');
-            streetTextBox.Text = street[1];
-            homeNumTextBox.Text = street[3];
-
+            nameTextBox.Text = dataGridView.CurrentRow.Cells[1].Value.ToString();
+            TecherBox.Text = dataGridView.CurrentRow.Cells[2].Value.ToString();
         }
 
-        private void ChangeBtn_Click(object sender, EventArgs e)
+        private void AddBtn_Click(object sender, EventArgs e)
         {
             try
             {
                 dataBase.cn.Close();
                 dataBase.cn.Open();
-                command = new MySqlCommand($"UPDATE students SET idGrup = (SELECT id FROM grup WHERE number = '{grupBox.Text}'),  stuName = '{nameTextBox.Text.Trim()}', " +
-                    $"lastName = '{lastNameTextBox.Text.Trim()}', address = 'ул. {streetTextBox.Text.Trim()} д. {homeNumTextBox.Text.Trim()}' WHERE id = {idRecor}", dataBase.cn);
+                command = new MySqlCommand($"UPDATA subjects SET name = '{nameTextBox.Text.Trim()}', idTeacher = {TecherBox.Text} WHERE id = {idRecor}", dataBase.cn);
                 command.ExecuteNonQuery();
                 dataBase.cn.Close();
                 dataBase.loadDB(dataGridView, idTab);
@@ -59,13 +54,13 @@ namespace EducationManagement.viewModel.ChangeForm
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
             }
         }
 
-        private void ChangeStudent_Load(object sender, EventArgs e)
+        private void ChangeSubject_Load(object sender, EventArgs e)
         {
-            if (!tool.checkAdmin(prava))
+            if (!tools.checkAdmin(prava))
             {
                 MessageBox.Show("У вас нет прав для редактирования данной таблицы");
                 this.Close();

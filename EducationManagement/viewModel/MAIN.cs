@@ -119,16 +119,20 @@ namespace EducationManagement
                     chengeGrup.Show();
                     break;
                 case 2:
-                    
+                    ChangeSubject changeSubject = new ChangeSubject(dataGridView1, tabControl1.SelectedIndex, positons, Convert.ToInt32(idTextBox.Text));
+                    changeSubject.Show();
                     break;
                 case 3:
-                    
+                    ChangeAssessment changeAssessment = new ChangeAssessment(dataGridView1, idStaff, positons, tabControl1.SelectedIndex, Convert.ToInt32(idTextBox.Text));
+                    changeAssessment.Show();
                     break;
                 case 4:
-                    
+                    ChangeStaff changeStaff = new ChangeStaff(dataGridView1, tabControl1.SelectedIndex, Convert.ToInt32(idTextBox.Text));
+                    changeStaff.Show();
                     break;
                 case 5:
-                    
+                    ChangePosit changePosit = new ChangePosit(dataGridView1, tabControl1.SelectedIndex, Convert.ToInt32(idTextBox.Text));
+                    changePosit.Show();
                     break;
             }
         }

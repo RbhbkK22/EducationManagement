@@ -30,19 +30,28 @@ namespace EducationManagement.viewModel.AddForm
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            if (nameTextBox.Text == "Название")
+            try
             {
-                MessageBox.Show("Нужные данные не введены");
+
+
+                if (nameTextBox.Text == "Название")
+                {
+                    MessageBox.Show("Нужные данные не введены");
+                }
+                else
+                {
+                    dataBase.cn.Close();
+                    dataBase.cn.Open();
+                    command = new MySqlCommand($"INSERT INTO positions (name) VALUES ('{nameTextBox.Text.Trim()}');", dataBase.cn);
+                    command.ExecuteNonQuery();
+                    dataBase.cn.Close();
+                    dataBase.loadDB(dataGridView, idTab);
+                    this.Close();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                dataBase.cn.Close();
-                dataBase.cn.Open();
-                command = new MySqlCommand($"INSERT INTO positions (name) VALUES ('{nameTextBox.Text.Trim()}');", dataBase.cn);
-                command.ExecuteNonQuery();
-                dataBase.cn.Close();
-                dataBase.loadDB(dataGridView, idTab);
-                this.Close();
+                MessageBox.Show(ex.Message);
             }
         }
     }
