@@ -17,20 +17,56 @@ namespace EducationManagement
 
         private void autorisBtn_Click(object sender, EventArgs e)
         {
-            string login = loginTextBox.Text;
-            string password = passTextBox.Text;
-            string posit = string.Empty;
-            dataBase.cn.Close();
-            dataBase.cn.Open();
-            command = new MySqlCommand($"SELECT name FROM positions WHERE id = (SELECT idPositions FROM staff WHERE login = '{login}' AND pass = '{password}')", dataBase.cn);
-            MySqlDataReader reader = command.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                posit = reader.GetString(0);
-            };
-            MAIN main = new MAIN(posit);
-            main.Show();
-            this.Hide();
+
+
+                if (loginTextBox.Text == "Ћогин" || passTextBox.Text == "ѕароль")
+                {
+                    MessageBox.Show("¬ведите логин и пароль");
+                }
+                else
+                {
+
+
+                    string login = loginTextBox.Text;
+                    string password = passTextBox.Text;
+                    string posit = string.Empty;
+                    dataBase.cn.Close();
+                    dataBase.cn.Open();
+                    command = new MySqlCommand($"SELECT name FROM positions WHERE id = (SELECT idPositions FROM staff WHERE login = '{login}' AND pass = '{password}')", dataBase.cn);
+                    MySqlDataReader reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        reader.Close();
+                        command = new MySqlCommand($"SELECT name FROM positions WHERE id = (SELECT idPositions FROM staff WHERE login = '{login}' AND pass = '{password}')", dataBase.cn);
+                        reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            posit = reader.GetString(0);
+                        };
+                        reader.Close();
+                        command = new MySqlCommand($"SELECT id FROM staff WHERE login = '{login}' AND pass = '{password}'",dataBase.cn);
+                        reader = command.ExecuteReader();
+                        int id = 0;
+                        while (reader.Read())
+                        {
+                            id = reader.GetInt32(0);
+                        }
+                        MAIN main = new MAIN(posit, id);
+                        main.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ћогин или пароль введены не верно");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

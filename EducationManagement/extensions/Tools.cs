@@ -24,7 +24,7 @@ namespace EducationManagement.extensions
             dataBase.Connect();
         }
 
-        protected bool checkAdmin(string prava)
+        public bool checkAdmin(string prava)
         {
             if(prava == "администратор")
             {

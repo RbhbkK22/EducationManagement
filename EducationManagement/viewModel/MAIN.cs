@@ -17,7 +17,8 @@ namespace EducationManagement
         string positons;
         DataBase dataBase = new DataBase();
         Tools tools;
-        public MAIN(string positions)
+        int idStaff;
+        public MAIN(string positions, int idStaff)
         {
             InitializeComponent();
             this.positons = positions;
@@ -26,7 +27,7 @@ namespace EducationManagement
             dataBase.Connect();
             tabControl1.SelectedIndex = 0;
             dataBase.loadDB(dataGridView1, tabControl1.SelectedIndex);
-
+            this.idStaff = idStaff;
         }
 
 
@@ -53,8 +54,12 @@ namespace EducationManagement
                     addGrup.Show();
                     break;
                 case 2:
+                    AddSubject addSubject = new AddSubject(dataGridView1, tabControl1.SelectedIndex, positons);
+                    addSubject.Show();
                     break;
                 case 3:
+                    AddAssessment addAssessment = new AddAssessment(dataGridView1, idStaff, positons, tabControl1.SelectedIndex);
+                    addAssessment.Show();
                     break;
                 case 4:
                     break;
@@ -62,13 +67,5 @@ namespace EducationManagement
                     break;
             }
         }
-
-
-
-
-        /*        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-                {
-                    dataBase.loadDB(dataGridView1, comboBox1.SelectedIndex);
-                }*/
     }
 }
