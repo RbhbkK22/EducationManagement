@@ -64,5 +64,25 @@ namespace EducationManagement.extensions
 
             comboBox.Items.AddRange(IdsForFilling(tab, numColumn).ToArray());
         }
+
+        public string GetTabName(int idTab)
+        {
+            switch (idTab)
+            {
+                case 0:
+                    return "students";
+                case 1:
+                    return "grup";
+                case 2:
+                    return "subjects";
+                case 3:
+                    return "assessments";
+                case 4:
+                    return "staff";
+                case 5:
+                    return "positions";
+            }
+            return "";
+        }
     }
 }

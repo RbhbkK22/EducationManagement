@@ -17,14 +17,17 @@ namespace EducationManagement.viewModel.AddForm
         DataBase dataBase = new DataBase();
         MySqlCommand command;
         DataGridView dataGridView;
+        Tools tool = new Tools();
+        string prava;
         int idTab;
-        public AddGrup(DataGridView dataGridView, int idTab)
+        public AddGrup(DataGridView dataGridView, int idTab, string prava)
         {
             InitializeComponent();
             numberGrupTextBox.AddPlaceholder("Номер группы");
             dataBase.Connect();
             this.dataGridView = dataGridView;
             this.idTab = idTab;
+            this.prava = prava;
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
@@ -50,6 +53,15 @@ namespace EducationManagement.viewModel.AddForm
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void AddGrup_Load(object sender, EventArgs e)
+        {
+            if (!tool.checkAdmin(prava))
+            {
+                MessageBox.Show("У вас нет прав для редактирования данной таблицы");
+                this.Close();
             }
         }
     }

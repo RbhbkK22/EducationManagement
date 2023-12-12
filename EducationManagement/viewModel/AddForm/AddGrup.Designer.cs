@@ -73,6 +73,7 @@
             Name = "AddGrup";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AddGrup";
+            Load += AddGrup_Load;
             ResumeLayout(false);
             PerformLayout();
         }

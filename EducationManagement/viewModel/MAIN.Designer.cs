@@ -40,6 +40,8 @@
             textBox1 = new TextBox();
             button2 = new Button();
             OpenAddForm = new Button();
+            idTextBox = new TextBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabControl1.SuspendLayout();
             SuspendLayout();
@@ -52,6 +54,7 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(984, 343);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellMouseClick += dataGridView1_CellMouseClick;
             // 
             // tabControl1
             // 
@@ -84,7 +87,7 @@
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(385, 0);
+            tabPage2.Size = new Size(410, 0);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Группы";
             tabPage2.UseVisualStyleBackColor = true;
@@ -94,7 +97,7 @@
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(385, 0);
+            tabPage3.Size = new Size(410, 0);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Предметы";
             tabPage3.UseVisualStyleBackColor = true;
@@ -104,7 +107,7 @@
             tabPage4.Location = new Point(4, 24);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(385, 0);
+            tabPage4.Size = new Size(410, 0);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Оценки";
             tabPage4.UseVisualStyleBackColor = true;
@@ -114,7 +117,7 @@
             tabPage5.Location = new Point(4, 24);
             tabPage5.Name = "tabPage5";
             tabPage5.Padding = new Padding(3);
-            tabPage5.Size = new Size(385, 0);
+            tabPage5.Size = new Size(410, 0);
             tabPage5.TabIndex = 4;
             tabPage5.Text = "Работники";
             tabPage5.UseVisualStyleBackColor = true;
@@ -124,7 +127,7 @@
             tabPage6.Location = new Point(4, 24);
             tabPage6.Name = "tabPage6";
             tabPage6.Padding = new Padding(3);
-            tabPage6.Size = new Size(385, 0);
+            tabPage6.Size = new Size(410, 0);
             tabPage6.TabIndex = 5;
             tabPage6.Text = "Должности";
             tabPage6.UseVisualStyleBackColor = true;
@@ -167,11 +170,31 @@
             OpenAddForm.UseVisualStyleBackColor = true;
             OpenAddForm.Click += OpenAddForm_Click;
             // 
+            // idTextBox
+            // 
+            idTextBox.Location = new Point(12, 466);
+            idTextBox.Name = "idTextBox";
+            idTextBox.Size = new Size(100, 23);
+            idTextBox.TabIndex = 8;
+            idTextBox.Visible = false;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(118, 385);
+            button1.Name = "button1";
+            button1.Size = new Size(100, 40);
+            button1.TabIndex = 9;
+            button1.Text = "Удалить";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // MAIN
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1008, 501);
+            Controls.Add(button1);
+            Controls.Add(idTextBox);
             Controls.Add(OpenAddForm);
             Controls.Add(button2);
             Controls.Add(textBox1);
@@ -202,5 +225,7 @@
         private TextBox textBox1;
         private Button button2;
         private Button OpenAddForm;
+        private TextBox idTextBox;
+        private Button button1;
     }
 }

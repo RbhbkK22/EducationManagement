@@ -1,5 +1,6 @@
 ﻿using EducationManagement.extensions;
 using EducationManagement.viewModel.AddForm;
+using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,11 +47,11 @@ namespace EducationManagement
             switch (tabControl1.SelectedIndex)
             {
                 case 0:
-                    AddStudent addStudent = new AddStudent(dataGridView1, tabControl1.SelectedIndex);
+                    AddStudent addStudent = new AddStudent(dataGridView1, tabControl1.SelectedIndex, positons);
                     addStudent.Show();
                     break;
                 case 1:
-                    AddGrup addGrup = new AddGrup(dataGridView1, tabControl1.SelectedIndex);
+                    AddGrup addGrup = new AddGrup(dataGridView1, tabControl1.SelectedIndex, positons);
                     addGrup.Show();
                     break;
                 case 2:
@@ -62,12 +63,45 @@ namespace EducationManagement
                     addAssessment.Show();
                     break;
                 case 4:
+                    AddStaff addStaff = new AddStaff(dataGridView1, tabControl1.SelectedIndex);
+                    addStaff.Show();
                     break;
                 case 5:
-                    AddPosit addPosit = new AddPosit(dataGridView1,tabControl1.SelectedIndex);
+                    AddPosit addPosit = new AddPosit(dataGridView1, tabControl1.SelectedIndex);
                     addPosit.Show();
                     break;
             }
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            idTextBox.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            if (!tools.checkAdmin(positons) && tabControl1.SelectedIndex != 3)
+            {
+                MessageBox.Show("У вас нет прав для редактирования данной таблицы");
+            }
+            else
+            {
+                try
+                {
+                    dataBase.cn.Close();
+                    dataBase.cn.Open();
+                    MySqlCommand command = new MySqlCommand($"DELETE FROM {tools.GetTabName(tabControl1.SelectedIndex)} WHERE id = {idTextBox.Text}", dataBase.cn);
+                    command.ExecuteNonQuery();
+                    dataBase.cn.Close();
+                    dataBase.loadDB(dataGridView1, tabControl1.SelectedIndex);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                } 
+            }
+
         }
     }
 }

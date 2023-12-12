@@ -115,6 +115,7 @@
             Name = "AddStudent";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AddStudent";
+            Load += AddStudent_Load;
             ResumeLayout(false);
             PerformLayout();
         }
