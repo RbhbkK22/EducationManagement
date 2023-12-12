@@ -40,7 +40,7 @@
             AddBtn.Location = new Point(100, 350);
             AddBtn.Name = "AddBtn";
             AddBtn.Size = new Size(100, 40);
-            AddBtn.TabIndex = 2;
+            AddBtn.TabIndex = 0;
             AddBtn.Text = "Добавить";
             AddBtn.UseVisualStyleBackColor = true;
             AddBtn.Click += AddBtn_Click;
@@ -51,17 +51,18 @@
             nameTextBox.Location = new Point(50, 143);
             nameTextBox.Name = "nameTextBox";
             nameTextBox.Size = new Size(200, 26);
-            nameTextBox.TabIndex = 5;
+            nameTextBox.TabIndex = 1;
             // 
             // TecherBox
             // 
             TecherBox.DropDownStyle = ComboBoxStyle.DropDownList;
             TecherBox.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TecherBox.FormattingEnabled = true;
+            TecherBox.ItemHeight = 19;
             TecherBox.Location = new Point(50, 175);
             TecherBox.Name = "TecherBox";
             TecherBox.Size = new Size(200, 27);
-            TecherBox.TabIndex = 6;
+            TecherBox.TabIndex = 2;
             // 
             // label1
             // 

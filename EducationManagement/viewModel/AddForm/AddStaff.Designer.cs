@@ -54,7 +54,7 @@
             salaryTextBox.Location = new Point(50, 207);
             salaryTextBox.Name = "salaryTextBox";
             salaryTextBox.Size = new Size(200, 26);
-            salaryTextBox.TabIndex = 11;
+            salaryTextBox.TabIndex = 4;
             // 
             // lastNameTextBox
             // 
@@ -62,7 +62,7 @@
             lastNameTextBox.Location = new Point(50, 142);
             lastNameTextBox.Name = "lastNameTextBox";
             lastNameTextBox.Size = new Size(200, 26);
-            lastNameTextBox.TabIndex = 10;
+            lastNameTextBox.TabIndex = 2;
             // 
             // positBox
             // 
@@ -72,7 +72,7 @@
             positBox.Location = new Point(50, 174);
             positBox.Name = "positBox";
             positBox.Size = new Size(200, 27);
-            positBox.TabIndex = 9;
+            positBox.TabIndex = 3;
             // 
             // nameTextBox
             // 
@@ -80,7 +80,7 @@
             nameTextBox.Location = new Point(50, 110);
             nameTextBox.Name = "nameTextBox";
             nameTextBox.Size = new Size(200, 26);
-            nameTextBox.TabIndex = 8;
+            nameTextBox.TabIndex = 1;
             // 
             // AddBtn
             // 
@@ -88,7 +88,7 @@
             AddBtn.Location = new Point(100, 350);
             AddBtn.Name = "AddBtn";
             AddBtn.Size = new Size(100, 40);
-            AddBtn.TabIndex = 12;
+            AddBtn.TabIndex = 0;
             AddBtn.Text = "Добавить";
             AddBtn.UseVisualStyleBackColor = true;
             AddBtn.Click += AddBtn_Click;
@@ -99,7 +99,7 @@
             loginTextBox.Location = new Point(50, 239);
             loginTextBox.Name = "loginTextBox";
             loginTextBox.Size = new Size(200, 26);
-            loginTextBox.TabIndex = 13;
+            loginTextBox.TabIndex = 5;
             // 
             // passTextBox
             // 
@@ -107,7 +107,7 @@
             passTextBox.Location = new Point(50, 271);
             passTextBox.Name = "passTextBox";
             passTextBox.Size = new Size(200, 26);
-            passTextBox.TabIndex = 14;
+            passTextBox.TabIndex = 6;
             // 
             // AddStaff
             // 

@@ -35,20 +35,23 @@
             // 
             // loginTextBox
             // 
+            loginTextBox.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
             loginTextBox.Location = new Point(55, 117);
             loginTextBox.Name = "loginTextBox";
-            loginTextBox.Size = new Size(240, 23);
+            loginTextBox.Size = new Size(240, 26);
             loginTextBox.TabIndex = 1;
             // 
             // passTextBox
             // 
+            passTextBox.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
             passTextBox.Location = new Point(55, 178);
             passTextBox.Name = "passTextBox";
-            passTextBox.Size = new Size(240, 23);
+            passTextBox.Size = new Size(240, 26);
             passTextBox.TabIndex = 2;
             // 
             // autorisBtn
             // 
+            autorisBtn.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
             autorisBtn.Location = new Point(100, 320);
             autorisBtn.Name = "autorisBtn";
             autorisBtn.Size = new Size(150, 50);

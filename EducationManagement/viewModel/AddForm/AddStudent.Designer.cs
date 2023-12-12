@@ -43,7 +43,7 @@
             AddBtn.Location = new Point(100, 350);
             AddBtn.Name = "AddBtn";
             AddBtn.Size = new Size(100, 40);
-            AddBtn.TabIndex = 1;
+            AddBtn.TabIndex = 0;
             AddBtn.Text = "Добавить";
             AddBtn.UseVisualStyleBackColor = true;
             AddBtn.Click += AddBtn_Click;
@@ -64,7 +64,7 @@
             nameTextBox.Location = new Point(50, 143);
             nameTextBox.Name = "nameTextBox";
             nameTextBox.Size = new Size(200, 26);
-            nameTextBox.TabIndex = 4;
+            nameTextBox.TabIndex = 2;
             // 
             // grupBox
             // 
@@ -74,7 +74,7 @@
             grupBox.Location = new Point(50, 110);
             grupBox.Name = "grupBox";
             grupBox.Size = new Size(200, 27);
-            grupBox.TabIndex = 5;
+            grupBox.TabIndex = 1;
             // 
             // lastNameTextBox
             // 
@@ -82,7 +82,7 @@
             lastNameTextBox.Location = new Point(50, 175);
             lastNameTextBox.Name = "lastNameTextBox";
             lastNameTextBox.Size = new Size(200, 26);
-            lastNameTextBox.TabIndex = 6;
+            lastNameTextBox.TabIndex = 3;
             // 
             // streetTextBox
             // 
@@ -90,7 +90,7 @@
             streetTextBox.Location = new Point(50, 207);
             streetTextBox.Name = "streetTextBox";
             streetTextBox.Size = new Size(150, 26);
-            streetTextBox.TabIndex = 7;
+            streetTextBox.TabIndex = 4;
             // 
             // homeNumTextBox
             // 
@@ -98,7 +98,7 @@
             homeNumTextBox.Location = new Point(200, 207);
             homeNumTextBox.Name = "homeNumTextBox";
             homeNumTextBox.Size = new Size(50, 26);
-            homeNumTextBox.TabIndex = 8;
+            homeNumTextBox.TabIndex = 5;
             // 
             // AddStudent
             // 

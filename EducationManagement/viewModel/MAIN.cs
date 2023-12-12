@@ -1,5 +1,7 @@
 ﻿using EducationManagement.extensions;
 using EducationManagement.viewModel.AddForm;
+using EducationManagement.viewModel.ChangeForm;
+using EducationManagement.viewModel.ChengeForm;
 using MySqlConnector;
 using System;
 using System.Collections.Generic;
@@ -99,9 +101,36 @@ namespace EducationManagement
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                } 
+                }
             }
 
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            switch (tabControl1.SelectedIndex)
+            {
+                case 0:
+                    ChangeStudent changeStudent = new ChangeStudent(dataGridView1, tabControl1.SelectedIndex, positons, Convert.ToInt32(idTextBox.Text));
+                    changeStudent.Show();
+                    break;
+                case 1:
+                    ChangeGrup chengeGrup = new ChangeGrup(dataGridView1, tabControl1.SelectedIndex, positons, Convert.ToInt32(idTextBox.Text));
+                    chengeGrup.Show();
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                    break;
+                case 4:
+                    
+                    break;
+                case 5:
+                    
+                    break;
+            }
         }
     }
 }

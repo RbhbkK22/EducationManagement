@@ -34,6 +34,9 @@ namespace EducationManagement.viewModel.AddForm
             this.prava = prava;
             this.idTab = idTab;
             assessmentTextBox.AddPlaceholder("Оценка");
+            grupBox.AddPlaceHolderComboBox("Группа");
+            subBox.AddPlaceHolderComboBox("Предмет");
+            StudentBox.AddPlaceHolderComboBox("Студент");
         }
 
 
@@ -43,7 +46,7 @@ namespace EducationManagement.viewModel.AddForm
             try
             {
 
-                if (assessmentTextBox.Text == "Оценка" || StudentBox.Text == null)
+                if (assessmentTextBox.Text == "Оценка" || StudentBox.Text == null || subBox.Text == "Предмет" || StudentBox.Text == null || StudentBox.Text == "Студент")
                 {
                     MessageBox.Show("Нужные данные не введены");
                 }
@@ -77,7 +80,7 @@ namespace EducationManagement.viewModel.AddForm
                 dataBase.cn.Open();
                 command = new MySqlCommand($"SELECT * FROM subjects WHERE idTeacher = {idStaff}", dataBase.cn);
                 reader = command.ExecuteReader();
-                if (reader.Read())
+                while (reader.Read())
                 {
                     subBox.Items.Add(reader.GetValue(1).ToString());
                 }

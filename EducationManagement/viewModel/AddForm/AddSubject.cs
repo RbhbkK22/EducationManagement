@@ -27,6 +27,7 @@ namespace EducationManagement.viewModel.AddForm
         {
             InitializeComponent();
             nameTextBox.AddPlaceholder("Название");
+            TecherBox.AddPlaceHolderComboBox("Преподаватель");
             dataBase.Connect();
             tools.FillingComboBox(TecherBox, "staff", 0);
             this.dataGridView = dataGridView;
@@ -38,7 +39,7 @@ namespace EducationManagement.viewModel.AddForm
             try
             {
 
-                if (nameTextBox.Text == "Имя" || TecherBox.Text == null)
+                if (nameTextBox.Text == "Имя" || TecherBox.Text == null || TecherBox.Text == "Преподаватель")
                 {
                     MessageBox.Show("Нужные данные не введены");
                 }

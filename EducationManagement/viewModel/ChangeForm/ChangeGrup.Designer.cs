@@ -1,6 +1,6 @@
-﻿namespace EducationManagement.viewModel.AddForm
+﻿namespace EducationManagement.viewModel.ChengeForm
 {
-    partial class AddPosit
+    partial class ChangeGrup
     {
         /// <summary>
         /// Required designer variable.
@@ -29,49 +29,51 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            nameTextBox = new TextBox();
-            AddBtn = new Button();
+            numberGrupTextBox = new TextBox();
+            ChangeBtn = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Consolas", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(11, 15);
+            label1.Location = new Point(30, 15);
             label1.Name = "label1";
-            label1.Size = new Size(272, 28);
+            label1.Size = new Size(220, 28);
             label1.TabIndex = 5;
-            label1.Text = "Добавление должности";
+            label1.Text = "Изменение группы";
             // 
-            // nameTextBox
+            // numberGrupTextBox
             // 
-            nameTextBox.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            nameTextBox.Location = new Point(50, 170);
-            nameTextBox.Name = "nameTextBox";
-            nameTextBox.Size = new Size(200, 26);
-            nameTextBox.TabIndex = 1;
+            numberGrupTextBox.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            numberGrupTextBox.Location = new Point(50, 170);
+            numberGrupTextBox.Name = "numberGrupTextBox";
+            numberGrupTextBox.Size = new Size(200, 26);
+            numberGrupTextBox.TabIndex = 4;
             // 
-            // AddBtn
+            // ChangeBtn
             // 
-            AddBtn.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            AddBtn.Location = new Point(100, 350);
-            AddBtn.Name = "AddBtn";
-            AddBtn.Size = new Size(100, 40);
-            AddBtn.TabIndex = 0;
-            AddBtn.Text = "Добавить";
-            AddBtn.UseVisualStyleBackColor = true;
-            AddBtn.Click += AddBtn_Click;
+            ChangeBtn.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ChangeBtn.Location = new Point(100, 350);
+            ChangeBtn.Name = "ChangeBtn";
+            ChangeBtn.Size = new Size(100, 40);
+            ChangeBtn.TabIndex = 3;
+            ChangeBtn.Text = "Изменить";
+            ChangeBtn.UseVisualStyleBackColor = true;
+            ChangeBtn.Click += ChangeBtn_Click;
             // 
-            // AddPosit
+            // ChangeGrup
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(284, 411);
             Controls.Add(label1);
-            Controls.Add(nameTextBox);
-            Controls.Add(AddBtn);
-            Name = "AddPosit";
-            Text = "AddPosit";
+            Controls.Add(numberGrupTextBox);
+            Controls.Add(ChangeBtn);
+            Name = "ChangeGrup";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "ChengeGrup";
+            Load += ChangeGrup_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -79,7 +81,7 @@
         #endregion
 
         private Label label1;
-        private TextBox nameTextBox;
-        private Button AddBtn;
+        private TextBox numberGrupTextBox;
+        private Button ChangeBtn;
     }
 }

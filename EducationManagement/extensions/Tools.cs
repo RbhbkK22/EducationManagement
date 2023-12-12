@@ -26,7 +26,7 @@ namespace EducationManagement.extensions
 
         public bool checkAdmin(string prava)
         {
-            if(prava == "администратор")
+            if(prava == "Админ")
             {
                 return true;
             }

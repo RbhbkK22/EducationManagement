@@ -46,7 +46,7 @@ namespace EducationManagement
                             posit = reader.GetString(0);
                         };
                         reader.Close();
-                        command = new MySqlCommand($"SELECT id FROM staff WHERE login = '{login}' AND pass = '{password}'",dataBase.cn);
+                        command = new MySqlCommand($"SELECT id FROM staff WHERE login = '{login}' AND pass = '{password}'", dataBase.cn);
                         reader = command.ExecuteReader();
                         int id = 0;
                         while (reader.Read())

@@ -54,7 +54,9 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(984, 343);
             dataGridView1.TabIndex = 0;
+            dataGridView1.TabStop = false;
             dataGridView1.CellMouseClick += dataGridView1_CellMouseClick;
+            dataGridView1.DoubleClick += dataGridView1_DoubleClick;
             // 
             // tabControl1
             // 
@@ -69,7 +71,7 @@
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(418, 24);
-            tabControl1.TabIndex = 3;
+            tabControl1.TabIndex = 0;
             tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
             // tabPage1
@@ -136,10 +138,11 @@
             // 
             comboBox2.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox2.FormattingEnabled = true;
+            comboBox2.ItemHeight = 14;
             comboBox2.Location = new Point(679, 13);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(115, 22);
-            comboBox2.TabIndex = 4;
+            comboBox2.TabIndex = 3;
             // 
             // textBox1
             // 
@@ -147,7 +150,7 @@
             textBox1.Location = new Point(800, 13);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(115, 22);
-            textBox1.TabIndex = 5;
+            textBox1.TabIndex = 4;
             // 
             // button2
             // 
@@ -155,7 +158,7 @@
             button2.Location = new Point(921, 13);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
-            button2.TabIndex = 6;
+            button2.TabIndex = 5;
             button2.Text = "Поиск";
             button2.UseVisualStyleBackColor = true;
             // 
@@ -165,7 +168,7 @@
             OpenAddForm.Location = new Point(12, 385);
             OpenAddForm.Name = "OpenAddForm";
             OpenAddForm.Size = new Size(100, 40);
-            OpenAddForm.TabIndex = 7;
+            OpenAddForm.TabIndex = 1;
             OpenAddForm.Text = "Добавить";
             OpenAddForm.UseVisualStyleBackColor = true;
             OpenAddForm.Click += OpenAddForm_Click;
@@ -176,14 +179,16 @@
             idTextBox.Name = "idTextBox";
             idTextBox.Size = new Size(100, 23);
             idTextBox.TabIndex = 8;
+            idTextBox.TabStop = false;
             idTextBox.Visible = false;
             // 
             // button1
             // 
+            button1.Font = new Font("Consolas", 12F, FontStyle.Regular, GraphicsUnit.Point);
             button1.Location = new Point(118, 385);
             button1.Name = "button1";
             button1.Size = new Size(100, 40);
-            button1.TabIndex = 9;
+            button1.TabIndex = 2;
             button1.Text = "Удалить";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;

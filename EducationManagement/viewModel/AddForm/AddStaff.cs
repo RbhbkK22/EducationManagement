@@ -29,6 +29,7 @@ namespace EducationManagement.viewModel.AddForm
             salaryTextBox.AddPlaceholder("Зарплата");
             loginTextBox.AddPlaceholder("Логин");
             passTextBox.AddPlaceholder("Пароль");
+            positBox.AddPlaceHolderComboBox("Должность");
             tool.FillingComboBox(positBox, "positions", 1);
             this.dataGridView = dataGridView;
             this.idTab = idTab;
@@ -42,7 +43,7 @@ namespace EducationManagement.viewModel.AddForm
 
 
                 if (nameTextBox.Text == "Имя" || lastNameTextBox.Text == "Фамилия" || salaryTextBox.Text == "Зарплата" || loginTextBox.Text == "Логин"
-                    || passTextBox.Text == "Пароль" || positBox.Text == null)
+                    || passTextBox.Text == "Пароль" || positBox.Text == null || positBox.Text == "Должность")
                 {
                     MessageBox.Show("Нужные данные не введены");
                 }
@@ -64,6 +65,6 @@ namespace EducationManagement.viewModel.AddForm
             {
                 MessageBox.Show(ex.ToString());
             }
-}
+        }
     }
 }

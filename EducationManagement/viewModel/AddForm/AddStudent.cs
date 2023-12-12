@@ -19,11 +19,7 @@ namespace EducationManagement.viewModel.AddForm
             lastNameTextBox.AddPlaceholder("Фамилия");
             streetTextBox.AddPlaceholder("Улица");
             homeNumTextBox.AddPlaceholder("Дом");
-            /*            
-             *            
-             *            grupBox.AddPlaceholderComboBox("Номер группы");
-             *            
-             */
+            grupBox.AddPlaceHolderComboBox("Группа");
             this.dataGridView = dataGridView;
             this.idTab = idTab;
             dataBase.Connect();
@@ -36,7 +32,7 @@ namespace EducationManagement.viewModel.AddForm
             try
             {
 
-                if (nameTextBox.Text == "Имя" || lastNameTextBox.Text == "Фамилия" || streetTextBox.Text == "Улица" || homeNumTextBox.Text == "Дом" || grupBox.Text == "Номер группы")
+                if (nameTextBox.Text == "Имя" || lastNameTextBox.Text == "Фамилия" || streetTextBox.Text == "Улица" || homeNumTextBox.Text == "Дом" || grupBox.Text == "Группа" || grupBox.Text == null) 
                 {
                     MessageBox.Show("Нужные данные не введены");
                 }

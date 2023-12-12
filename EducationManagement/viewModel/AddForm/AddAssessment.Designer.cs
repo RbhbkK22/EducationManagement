@@ -42,7 +42,7 @@
             AddBtn.Location = new Point(100, 350);
             AddBtn.Name = "AddBtn";
             AddBtn.Size = new Size(100, 40);
-            AddBtn.TabIndex = 3;
+            AddBtn.TabIndex = 0;
             AddBtn.Text = "Добавить";
             AddBtn.UseVisualStyleBackColor = true;
             AddBtn.Click += AddBtn_Click;
@@ -55,7 +55,7 @@
             StudentBox.Location = new Point(50, 143);
             StudentBox.Name = "StudentBox";
             StudentBox.Size = new Size(200, 27);
-            StudentBox.TabIndex = 7;
+            StudentBox.TabIndex = 2;
             // 
             // assessmentTextBox
             // 
@@ -63,7 +63,7 @@
             assessmentTextBox.Location = new Point(50, 209);
             assessmentTextBox.Name = "assessmentTextBox";
             assessmentTextBox.Size = new Size(200, 26);
-            assessmentTextBox.TabIndex = 8;
+            assessmentTextBox.TabIndex = 4;
             // 
             // subBox
             // 
@@ -73,7 +73,7 @@
             subBox.Location = new Point(50, 176);
             subBox.Name = "subBox";
             subBox.Size = new Size(200, 27);
-            subBox.TabIndex = 9;
+            subBox.TabIndex = 3;
             // 
             // label1
             // 
@@ -93,7 +93,7 @@
             grupBox.Location = new Point(50, 110);
             grupBox.Name = "grupBox";
             grupBox.Size = new Size(200, 27);
-            grupBox.TabIndex = 11;
+            grupBox.TabIndex = 1;
             grupBox.SelectedIndexChanged += grupBox_SelectedIndexChanged;
             // 
             // AddAssessment
