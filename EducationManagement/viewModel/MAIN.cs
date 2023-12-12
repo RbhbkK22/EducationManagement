@@ -64,6 +64,8 @@ namespace EducationManagement
                 case 4:
                     break;
                 case 5:
+                    AddPosit addPosit = new AddPosit(dataGridView1,tabControl1.SelectedIndex);
+                    addPosit.Show();
                     break;
             }
         }

@@ -43,7 +43,7 @@ namespace EducationManagement.viewModel.AddForm
             try
             {
 
-                if (assessmentTextBox.Text == "Имя" || StudentBox.Text == null)
+                if (assessmentTextBox.Text == "Оценка" || StudentBox.Text == null)
                 {
                     MessageBox.Show("Нужные данные не введены");
                 }
@@ -54,7 +54,7 @@ namespace EducationManagement.viewModel.AddForm
                     string[] names = StudentBox.Text.Split(' ');
                     command = new MySqlCommand($"INSERT INTO assessments(idStudent, idSubject, assessment) " +
                         $"VALUES((SELECT id FROM students WHERE stuName = '{names[0]}' AND lastName = '{names[1]}'), " +
-                        $"(SELECT id FROM subjects WHERE name = '{subBox.Text}'), {assessmentTextBox.Text})", dataBase.cn);
+                        $"(SELECT id FROM subjects WHERE name = '{subBox.Text}'), {assessmentTextBox.Text.Trim()})", dataBase.cn);
                     command.ExecuteNonQuery();
                     dataBase.loadDB(dataGridView, idTab);
                     dataBase.cn.Close();

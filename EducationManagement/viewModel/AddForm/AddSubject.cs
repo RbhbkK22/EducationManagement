@@ -46,7 +46,7 @@ namespace EducationManagement.viewModel.AddForm
                 {
                     dataBase.cn.Close();
                     dataBase.cn.Open();
-                    command = new MySqlCommand($"INSERT INTO subjects (name, idTeacher) VALUES ('{nameTextBox.Text}', {TecherBox.Text})", dataBase.cn);
+                    command = new MySqlCommand($"INSERT INTO subjects (name, idTeacher) VALUES ('{nameTextBox.Text.Trim()}', {TecherBox.Text})", dataBase.cn);
                     command.ExecuteNonQuery();
                     dataBase.loadDB(dataGridView, idTab);
                     dataBase.cn.Close();

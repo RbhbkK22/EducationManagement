@@ -39,7 +39,7 @@ namespace EducationManagement.viewModel.AddForm
                 {
                     dataBase.cn.Close();
                     dataBase.cn.Open();
-                    command = new MySqlCommand($"INSERT INTO grup (number) VALUES ('{numberGrupTextBox.Text}');", dataBase.cn);
+                    command = new MySqlCommand($"INSERT INTO grup (number) VALUES ('{numberGrupTextBox.Text.Trim()}');", dataBase.cn);
                     command.ExecuteNonQuery();
                     dataBase.cn.Close();
                     dataBase.loadDB(dataGridView, idTab);

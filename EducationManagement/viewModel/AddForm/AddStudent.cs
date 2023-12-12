@@ -42,7 +42,7 @@ namespace EducationManagement.viewModel.AddForm
                         dataBase.cn.Close();
                     dataBase.cn.Open();
                     command = new MySqlCommand($"INSERT INTO students (idGrup, stuName, lastName, address) VALUES ((SELECT id FROM grup WHERE number = '{grupBox.Text}'), " +
-                        $"'{nameTextBox.Text}', '{lastNameTextBox.Text}', 'ул. {streetTextBox.Text} д. {homeNumTextBox.Text}')", dataBase.cn);
+                        $"'{nameTextBox.Text.Trim()}', '{lastNameTextBox.Text.Trim()}', 'ул. {streetTextBox.Text.Trim()} д. {homeNumTextBox.Text.Trim()}')", dataBase.cn);
                     command.ExecuteNonQuery();
                     dataBase.loadDB(dataGridView, idTab);
                     dataBase.cn.Close();
